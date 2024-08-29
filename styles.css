@@ -1,0 +1,132 @@
+@font-face {
+  font-family: "Chalkiez-Regular";
+  src: url("../fonts/Chalkiez-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "The Hungry";
+  src: url("../fonts/TheHungry.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "lambda.regular";
+  src: url("../fonts/lambda.regular.ttf") format("truetype");
+}
+
+:root {
+  --background-color: #fef2e3; /* Background color for the body */
+  --menu-bar-background: #3a2121; /* Background color for the menu bar */
+  --menu-bar-font-color: #ffffff; /* Font color for the menu bar */
+  --section-background: ##fef2e3; /* Background color for sections */
+  --section-font-color: #3a2121; /* Font color for sections */
+  --menu-bar-font-hover: #ff6347; /* Color on hover */
+  --menu-bar-font-active: #ffa07a; /* Color on click */
+}
+
+body {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+}
+
+.menu-bar {
+  display: flex;
+  justify-content: center;
+  background-color: var(--menu-bar-background);
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure menu bar is always on top */
+}
+
+.menu-bar h1 {
+  margin: 0 40px;
+  color: var(--menu-bar-font-color);
+  font-family: "The Hungry", serif;
+  cursor: pointer;
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.menu-bar h1:hover {
+  color: var(--menu-bar-font-hover); /* Color when hovered */
+}
+
+.menu-bar h1.active {
+  color: var(--menu-bar-font-active); /* Color when active */
+}
+
+.section {
+  display: none; /* Hide all sections by default */
+  margin-top: 100px; /* Space for the fixed menu */
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in element's total width and height */
+  background-color: var(--section-background);
+  color: var(--section-font-color);
+}
+h1 {
+  font-family: "The Hungry", serif;
+}
+
+h2 {
+  font-family: "Chalkiez-Regular", serif;
+}
+
+h3 {
+  font-family: "lambda.regular", sans-serif;
+}
+
+img {
+  width: 150px;
+  margin: 10px;
+}
+
+#pick-a-card.section {
+  display: block; /* Ensure 'Pick a Card' section is visible */
+}
+
+.card-container {
+  position: relative;
+  width: 500px; /* Adjust width as needed */
+  height: 500px; /* Adjust height as needed */
+  margin: 0 auto; /* Center horizontally */
+}
+
+.card {
+  position: absolute;
+  width: 80px; /* Adjust width to maintain ratio */
+  height: 120px; /* Adjust height to maintain ratio */
+  background: url("images/card-back.png") no-repeat center;
+  background-size: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.card.selected {
+  background: url("images/card-front.png") no-repeat center; /* Front image */
+  background-size: cover;
+  transform: scale(3);
+  z-index: 10;
+}
+
+/* Centering the card container */
+#game-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
+
+.hidden {
+  display: none;
+}
+
+/* Styles for h2 elements */
+p {
+  padding-left: 200px; /* Space from the left edge */
+  padding-right: 200px; /* Space from the right edge */
+  box-sizing: border-box; /* Ensure padding is included in the total width */
+}
