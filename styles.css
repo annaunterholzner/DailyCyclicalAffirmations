@@ -1,16 +1,16 @@
 @font-face {
   font-family: "Chalkiez-Regular";
-  src: url("../Fonts/Chalkiez-Regular.ttf") format("truetype");
+  src: url("/assets/Fonts/Chalkiez-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "The Hungry";
-  src: url("../Fonts/TheHungry.otf") format("truetype");
+  src: url("/assets/Fonts/TheHungry.otf") format("truetype");
 }
 
 @font-face {
   font-family: "lambda.regular";
-  src: url("../Fonts/lambda.regular.ttf") format("truetype");
+  src: url("/assets/Fonts/lambda.regular.ttf") format("truetype");
 }
 
 :root {
