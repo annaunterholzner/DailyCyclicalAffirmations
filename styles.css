@@ -5,12 +5,12 @@
 
 @font-face {
   font-family: "The Hungry";
-  src: url("./assets/Fonts/TheHungry.otf") format("opentype");
+  src: url("TheHungry.otf") format("opentype");
 }
 
 @font-face {
   font-family: "lambda.regular";
-  src: url("./assets/Fonts/lambda.regular.ttf") format("truetype");
+  src: url("lambda.regular.ttf") format("truetype");
 }
 
 :root {
