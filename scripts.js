@@ -17,6 +17,7 @@ function showSection(sectionId) {
     .classList.add("active");
 }
 
+
 const cardContainer = document.getElementById("card-container");
 const numCards = 33; 
 let cards = [];
@@ -28,7 +29,7 @@ function generateCards() {
   for (let i = 0; i < numCards; i++) {
     const card = document.createElement("div");
     card.classList.add("card");
-    card.dataset.index = i;
+    card.dataset.front = `front${i}.png`;
     cardContainer.appendChild(card);
     cards.push(card);
   }
