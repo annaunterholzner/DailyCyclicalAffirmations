@@ -87,7 +87,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; 
+  height: 10vh; 
 }
 
 .card-container {
@@ -99,9 +99,9 @@ img {
 
 .card {
   position: absolute;
-  width: 80px; 
-  height: 120px; 
-  background: url("back.png") no-repeat center;
+  width: 160px; 
+  height: 240px; 
+  background: url("backk.png") no-repeat center;
   background-size: cover;
   border-radius: 8px;
   cursor: pointer;
