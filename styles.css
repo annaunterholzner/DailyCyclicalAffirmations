@@ -83,7 +83,6 @@ img {
   margin: 10px;
 }
 
-
 #pick-a-card.section {
   display: block; /* Ensure 'Pick a Card' section is visible */
 }
@@ -125,10 +124,10 @@ img {
   display: none;
 }
 
-
 /* Styles for h2 elements */
 p {
   padding-left: 200px; /* Space from the left edge */
   padding-right: 200px; /* Space from the right edge */
   box-sizing: border-box; /* Ensure padding is included in the total width */
 }
+
