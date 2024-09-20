@@ -83,22 +83,25 @@ img {
   margin: 10px;
 }
 
-#pick-a-card.section {
-  display: block; /* Ensure 'Pick a Card' section is visible */
+#game-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
 }
 
 .card-container {
   position: relative;
-  width: 500px; /* Adjust width as needed */
-  height: 500px; /* Adjust height as needed */
-  margin: 0 auto; /* Center horizontally */
+  width: 500px; 
+  height: 500px; 
+  margin: 0 auto; 
 }
 
 .card {
   position: absolute;
-  width: 80px; /* Adjust width to maintain ratio */
-  height: 120px; /* Adjust height to maintain ratio */
-  background: url("images/card-back.png") no-repeat center;
+  width: 80px; 
+  height: 120px; 
+  background: url("back.png") no-repeat center;
   background-size: cover;
   border-radius: 8px;
   cursor: pointer;
@@ -106,22 +109,20 @@ img {
 }
 
 .card.selected {
-  background: url("images/card-front.png") no-repeat center; /* Front image */
+  background: url("front1.png") no-repeat center; 
   background-size: cover;
   transform: scale(3);
   z-index: 10;
 }
 
-/* Centering the card container */
-#game-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Full viewport height */
-}
-
 .hidden {
   display: none;
+}
+
+p {
+  padding-left: 200px; 
+  padding-right: 200px; 
+  box-sizing: border-box; 
 }
 
 /* Styles for h2 elements */
