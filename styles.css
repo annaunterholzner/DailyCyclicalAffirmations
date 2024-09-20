@@ -83,45 +83,56 @@ img {
   margin: 10px;
 }
 
-#pick-a-card.section {
-  display: block; /* Ensure 'Pick a Card' section is visible */
+/* Game section styles */
+#game-section {
+    text-align: center;
+    padding: 40px;
 }
 
 .card-container {
-  position: relative;
-  width: 500px; /* Adjust width as needed */
-  height: 500px; /* Adjust height as needed */
-  margin: 0 auto; /* Center horizontally */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .card {
-  position: absolute;
-  width: 80px; /* Adjust width to maintain ratio */
-  height: 120px; /* Adjust height to maintain ratio */
-  background: url("images/card-back.png") no-repeat center;
-  background-size: cover;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+    width: 200px;
+    height: 300px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
 }
 
-.card.selected {
-  background: url("images/card-front.png") no-repeat center; /* Front image */
-  background-size: cover;
-  transform: scale(3);
-  z-index: 10;
+.card:hover {
+    transform: scale(1.05);
 }
 
-/* Centering the card container */
-#game-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Full viewport height */
+.card img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    border-bottom: 2px solid #ddd;
 }
 
-.hidden {
-  display: none;
+.card p {
+    font-size: 16px;
+    color: #333;
+    padding: 10px 0;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
 }
 
 /* Styles for h2 elements */
