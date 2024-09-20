@@ -19,31 +19,68 @@ function showSection(sectionId) {
 
 // JavaScript for the game and menu navigation
 
-document.addEventListener('DOMContentLoaded', function () {
-    const cards = [
-        { imageSrc: 'card1.png', text: 'Affirmation 1' },
-        { imageSrc: 'card2.png', text: 'Affirmation 2' },
-        { imageSrc: 'card3.png', text: 'Affirmation 3' },
-        { imageSrc: 'card4.png', text: 'Affirmation 4' }
-    ];
+const cardContainer = document.getElementById("card-container");
+const numCards = 33; // Number of cards
+let cards = [];
 
-    const cardContainer = document.getElementById('card-container');
+// Generate card elements
+function generateCards() {
+  cardContainer.innerHTML = "";
+  cards = [];
+  for (let i = 0; i < numCards; i++) {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.dataset.index = i;
+    cardContainer.appendChild(card);
+    cards.push(card);
+  }
+  shuffleCards();
+}
 
-    cards.forEach((card) => {
-        const cardElement = document.createElement('div');
-        cardElement.classList.add('card');
+// Shuffle cards randomly
+function shuffleCards() {
+  cards.forEach((card) => {
+    card.style.transform = "";
+    card.classList.remove("selected");
+  });
 
-        const cardImage = document.createElement('img');
-        cardImage.src = card.imageSrc;
-        cardImage.alt = 'Card Image';
-        cardElement.appendChild(cardImage);
+  const radius = 200; // Radius of the circle
+  const angleStep = (2 * Math.PI) / numCards;
+  cards.forEach((card, index) => {
+    const angle = index * angleStep;
+    const x = radius * Math.cos(angle);
+    const y = radius * Math.sin(angle);
+    card.style.left = `${50 + x}px`; // Centering horizontally
+    card.style.top = `${50 + y}px`; // Centering vertically
+  });
+}
 
-        const cardText = document.createElement('p');
-        cardText.innerText = card.text;
-        cardElement.appendChild(cardText);
+// Handle card click
+function handleCardClick(event) {
+  if (event.target.classList.contains("card")) {
+    const card = event.target;
+    card.classList.add("selected");
+    card.style.zIndex = 10; // Bring to front
 
-        cardContainer.appendChild(cardElement);
-    });
+    // Disable all other cards
+    cards.forEach((c) => c.removeEventListener("click", handleCardClick));
+  }
+}
+
+// Initialize the game
+function initGame() {
+  generateCards();
+  cardContainer.addEventListener("click", handleCardClick);
+}
+
+// Start game on load
+window.onload = initGame;
+
+// Shuffle cards on "Pick a Card" section refresh
+document.querySelector(".menu-bar").addEventListener("click", function (event) {
+  if (event.target.textContent === "Pick a Card") {
+    generateCards();
+  }
 });
 
 // Function to handle menu navigation
