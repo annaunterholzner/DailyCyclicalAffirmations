@@ -17,8 +17,6 @@ function showSection(sectionId) {
     .classList.add("active");
 }
 
-// JavaScript for the game and menu navigation
-
 const cardContainer = document.getElementById("card-container");
 const numCards = 33; // Number of cards
 let cards = [];
@@ -82,15 +80,3 @@ document.querySelector(".menu-bar").addEventListener("click", function (event) {
     generateCards();
   }
 });
-
-// Function to handle menu navigation
-function showSection(sectionId) {
-    const sections = document.querySelectorAll('.section');
-    sections.forEach(section => section.classList.add('hidden'));
-
-    const selectedSection = document.getElementById(sectionId);
-    if (selectedSection) {
-        selectedSection.classList.remove('hidden');
-    }
-}
-
