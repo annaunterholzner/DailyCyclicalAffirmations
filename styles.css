@@ -119,16 +119,5 @@ img {
   display: none;
 }
 
-p {
-  padding-left: 200px; 
-  padding-right: 200px; 
-  box-sizing: border-box; 
-}
 
-/* Styles for h2 elements */
-p {
-  padding-left: 200px; /* Space from the left edge */
-  padding-right: 200px; /* Space from the right edge */
-  box-sizing: border-box; /* Ensure padding is included in the total width */
-}
 
