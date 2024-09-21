@@ -19,66 +19,68 @@ function showSection(sectionId) {
 
 
 const cardContainer = document.getElementById("card-container");
-const numCards = 33; 
+const numCards = 33; // Total number of cards (front1.png to front33.png)
 let cards = [];
 
 // Generate card elements
 function generateCards() {
-  cardContainer.innerHTML = "";
+  cardContainer.innerHTML = ""; // Clear existing cards
   cards = [];
-  for (let i = 0; i < numCards; i++) {
+  for (let i = 1; i <= numCards; i++) { // Loop through front1.png to front33.png
     const card = document.createElement("div");
     card.classList.add("card");
-    card.dataset.front = `front${i}.png`;
-    cardContainer.appendChild(card);
-    cards.push(card);
+    card.dataset.front = `front${i}.png`; // Set data attribute for front image
+    cardContainer.appendChild(card); // Add card to container
+    cards.push(card); // Add card to array
   }
-  shuffleCards();
+  shuffleCards(); // Arrange cards
 }
 
-// Shuffle cards randomly
+// Shuffle cards randomly in a circular layout
 function shuffleCards() {
   cards.forEach((card) => {
-    card.style.transform = "";
-    card.classList.remove("selected");
+    card.style.transform = ""; // Reset transform
+    card.classList.remove("selected"); // Remove selected class
   });
 
-  const radius = 200; 
+  const radius = 200; // Circular layout radius
   const angleStep = (2 * Math.PI) / numCards;
   cards.forEach((card, index) => {
     const angle = index * angleStep;
-    const x = radius * Math.cos(angle);
-    const y = radius * Math.sin(angle);
-    card.style.left = `${250 + x}px`; // Centering horizontally
-    card.style.top = `${250 + y}px`; // Centering vertically
+    const x = radius * Math.cos(angle); // X-coordinate for circle
+    const y = radius * Math.sin(angle); // Y-coordinate for circle
+    card.style.left = `${250 + x}px`; // Center cards horizontally
+    card.style.top = `${250 + y}px`; // Center cards vertically
   });
 }
 
-// Handle card click
+// Handle card click event to reveal front image
 function handleCardClick(event) {
   if (event.target.classList.contains("card")) {
     const card = event.target;
-    card.classList.add("selected");
+    card.classList.add("selected"); // Enlarge and bring to front
+    card.style.background = `url('${card.dataset.front}') no-repeat center`; // Show front image
+    card.style.backgroundSize = 'cover'; // Ensure image covers card
     card.style.zIndex = 10;
 
-    // Disable all other cards
+    // Disable clicking on other cards
     cards.forEach((c) => c.removeEventListener("click", handleCardClick));
   }
 }
 
-// Initialize the game
+// Initialize the game by generating cards and adding event listeners
 function initGame() {
   generateCards();
   cardContainer.addEventListener("click", handleCardClick);
 }
 
-// Start game on load
+// Start the game when the page loads
 window.onload = initGame;
 
-// Shuffle cards on "Pick a Card" section refresh
+// Shuffle cards when "Pick a Card" button is clicked
 document.querySelector(".menu-bar").addEventListener("click", function (event) {
   if (event.target.textContent === "Pick a Card") {
-    generateCards();
+    generateCards(); // Reshuffle cards
   }
 });
 
