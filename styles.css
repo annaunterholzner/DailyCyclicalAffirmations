@@ -45,6 +45,14 @@ body {
   z-index: 1000;
 }
 
+/* Hamburger icon for mobile */
+.menu-toggle {
+  display: none; /* Hidden by default */
+  cursor: pointer;
+  font-size: 2rem;
+  color: var(--menu-bar-font-color);
+}
+
 .menu-bar h1 {
   margin: 10px;
   color: var(--menu-bar-font-color);
@@ -60,6 +68,12 @@ body {
 
 .menu-bar h1.active {
   color: var(--menu-bar-font-active); /* Change color when active */
+}
+
+/* Menu items container */
+.menu-items {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* Section Styling */
@@ -85,14 +99,32 @@ h3 {
 
 /* Mobile Menu Adjustments */
 @media (max-width: 768px) {
-  .menu-bar {
-    flex-direction: column; /* Stack menu items vertically on smaller screens */
-    padding: 15px;
+  .menu-toggle {
+    display: block; /* Show the hamburger icon */
+  }
+
+  .menu-items {
+    display: none; /* Hide the menu items initially */
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--menu-bar-background);
+    text-align: center;
+  }
+
+  .menu-bar.active .menu-items {
+    display: flex; /* Show the menu when clicked */
   }
 
   .menu-bar h1 {
-    font-size: clamp(1.2rem, 4vw, 1.6rem); /* Adjust font size further for mobile */
-    padding: 10px;
+    font-size: 1.5rem; /* Adjust font size for mobile */
+    padding: 15px;
+    width: 100%; /* Make each menu item take full width */
+    box-sizing: border-box;
+  }
+
+  .menu-bar h1:hover {
+    background-color: var(--menu-bar-font-hover); /* Background color change on hover */
+    color: #fff;
   }
 }
 
