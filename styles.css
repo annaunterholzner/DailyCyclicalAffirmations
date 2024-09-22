@@ -32,25 +32,30 @@ body {
   background-color: var(--background-color);
 }
 
+
+h1 {
+  font-family: "The Hungry", serif;
+}
+
+h2 {
+  font-family: "Chalkiez-Regular", serif;
+}
+
+h3 {
+  font-family: "lambda.regular", sans-serif;
+}
+
 /* Menu Bar Styling */
 .menu-bar {
   display: flex;
-  justify-content: space-around; /* Spread out menu items */
-  flex-wrap: wrap; /* Ensure items wrap on smaller screens */
+  justify-content: space-between;
+  align-items: center;
   background-color: var(--menu-bar-background);
   padding: 10px;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-}
-
-/* Hamburger icon for mobile */
-.menu-toggle {
-  display: none; /* Hidden by default */
-  cursor: pointer;
-  font-size: 2rem;
-  color: var(--menu-bar-font-color);
 }
 
 .menu-bar h1 {
@@ -70,31 +75,28 @@ body {
   color: var(--menu-bar-font-active); /* Change color when active */
 }
 
+/* Hamburger icon for mobile */
+.menu-toggle {
+  display: none; /* Hidden on desktop */
+  cursor: pointer;
+  font-size: 2rem;
+  color: var(--menu-bar-font-color);
+}
+
 /* Menu items container */
 .menu-items {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around; /* Spread out the items */
 }
 
 /* Section Styling */
 .section {
   display: none; /* Hide sections by default */
-  margin-top: 80px; /* Space for the fixed menu bar */
+  margin-top: 120px; /* Ensure space between menu and content */
   padding: 20px;
   background-color: var(--section-background);
   color: var(--section-font-color);
-}
-
-h1 {
-  font-family: "The Hungry", serif;
-}
-
-h2 {
-  font-family: "Chalkiez-Regular", serif;
-}
-
-h3 {
-  font-family: "lambda.regular", sans-serif;
 }
 
 /* Mobile Menu Adjustments */
@@ -104,7 +106,7 @@ h3 {
   }
 
   .menu-items {
-    display: none; /* Hide the menu items initially */
+    display: none; /* Hide menu items on mobile */
     flex-direction: column;
     width: 100%;
     background-color: var(--menu-bar-background);
@@ -112,7 +114,7 @@ h3 {
   }
 
   .menu-bar.active .menu-items {
-    display: flex; /* Show the menu when clicked */
+    display: flex; /* Show menu items when hamburger is clicked */
   }
 
   .menu-bar h1 {
