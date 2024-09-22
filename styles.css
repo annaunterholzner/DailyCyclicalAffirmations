@@ -83,18 +83,6 @@ h3 {
   font-family: "lambda.regular", sans-serif;
 }
 
-/* Mobile Menu Adjustments */
-@media (max-width: 768px) {
-  .menu-bar {
-    flex-direction: column; /* Stack menu items vertically on smaller screens */
-    padding: 15px;
-  }
-
-  .menu-bar h1 {
-    font-size: clamp(1.2rem, 4vw, 1.6rem); /* Adjust font size further for mobile */
-    padding: 10px;
-  }
-}
 
 /* Ensure images are responsive */
 img {
