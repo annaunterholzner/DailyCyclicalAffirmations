@@ -93,7 +93,5 @@ document.querySelector(".menu-bar").addEventListener("click", function (event) {
   }
 });
 
-document.querySelector(".menu-toggle").addEventListener("click", function() {
-  document.querySelector(".menu-bar").classList.toggle("active");
-});
+
 
