@@ -65,7 +65,7 @@ body {
 /* Section Styling */
 .section {
   display: none; /* Hide sections by default */
-  margin-top: 80px; /* Space for the fixed menu bar */
+  margin-top: 100px; /* Space for the fixed menu bar */
   padding: 20px;
   background-color: var(--section-background);
   color: var(--section-font-color);
