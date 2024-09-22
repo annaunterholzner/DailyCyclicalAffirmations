@@ -38,19 +38,28 @@ function generateCards() {
 
 // Shuffle cards randomly in a circular layout
 function shuffleCards() {
+  // Shuffle the array of cards
+  for (let i = cards.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [cards[i], cards[j]] = [cards[j], cards[i]]; // Swap cards[i] with cards[j]
+  }
+
   cards.forEach((card) => {
     card.style.transform = ""; // Reset transform
     card.classList.remove("selected"); // Remove selected class
   });
 
   const radius = 200; // Circular layout radius
+  const centerX = cardContainer.clientWidth / 2;
+  const centerY = cardContainer.clientHeight / 2;
   const angleStep = (2 * Math.PI) / numCards;
+
   cards.forEach((card, index) => {
     const angle = index * angleStep;
-    const x = radius * Math.cos(angle); // X-coordinate for circle
-    const y = radius * Math.sin(angle); // Y-coordinate for circle
-    card.style.left = `${250 + x}px`; // Center cards horizontally
-    card.style.top = `${250 + y}px`; // Center cards vertically
+    const x = centerX + radius * Math.cos(angle) - card.offsetWidth / 2;
+    const y = centerY + radius * Math.sin(angle) - card.offsetHeight / 2;
+    card.style.left = `${x}px`; // Center cards horizontally
+    card.style.top = `${y}px`; // Center cards vertically
   });
 }
 
