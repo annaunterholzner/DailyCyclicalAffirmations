@@ -71,6 +71,18 @@ body {
   color: var(--section-font-color);
 }
 
+h1 {
+  font-family: "The Hungry", serif;
+}
+
+h2 {
+  font-family: "Chalkiez-Regular", serif;
+}
+
+h3 {
+  font-family: "lambda.regular", sans-serif;
+}
+
 /* Mobile Menu Adjustments */
 @media (max-width: 768px) {
   .menu-bar {
