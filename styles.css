@@ -109,7 +109,6 @@ img {
 }
 
 .card.selected {
-  background: url("front1.png") no-repeat center; 
   background-size: cover;
   transform: scale(3);
   z-index: 10;
