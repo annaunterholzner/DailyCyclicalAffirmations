@@ -1,7 +1,8 @@
 function showSection(sectionId) {
+  // Hide all sections
   const sections = document.querySelectorAll(".section");
   sections.forEach((section) => {
-    section.style.display = "none"; // Hide all sections
+    section.style.display = "none";
   });
 
   // Hide all menu items' active state
@@ -10,15 +11,14 @@ function showSection(sectionId) {
     item.classList.remove("active");
   });
 
-  // Show the selected section and set active menu item
+  // Show the selected section and set the active menu item
   document.getElementById(sectionId).style.display = "block";
-  document
-    .querySelector(`.menu-bar h1[onclick="showSection('${sectionId}')"]`)
-    .classList.add("active");
+  document.querySelector(`.menu-bar h1[data-section="${sectionId}"]`).classList.add("active");
 }
+
 // Ensure the "home" section is shown when the page loads
 window.onload = function () {
-  showSection('home');
+  showSection("home");
 };
 
 const cardContainer = document.getElementById("card-container");
