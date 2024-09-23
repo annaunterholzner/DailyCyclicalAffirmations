@@ -16,7 +16,10 @@ function showSection(sectionId) {
     .querySelector(`.menu-bar h1[onclick="showSection('${sectionId}')"]`)
     .classList.add("active");
 }
-
+// Ensure the "home" section is shown when the page loads
+window.onload = function () {
+  showSection('home');
+};
 
 const cardContainer = document.getElementById("card-container");
 const numCards = 33; // Total number of cards (front1.png to front33.png)
