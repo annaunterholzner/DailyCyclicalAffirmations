@@ -6,6 +6,24 @@
     <title>Daily Cyclical Affirmations</title>
     <link rel="stylesheet" href="styles.css" />
   </head> 
+  <script>
+      // Function to show the desired section and hide the others
+      function showSection(section) {
+        // Hide all sections
+        var sections = document.querySelectorAll('section');
+        sections.forEach(function (sec) {
+          sec.style.display = 'none';
+        });
+
+        // Show the selected section
+        document.getElementById(section).style.display = 'block';
+      }
+
+      // Ensure the "home" section is shown when the page loads
+      window.onload = function () {
+        showSection('home');
+      };
+    </script>
   <body>
     <div class="menu-bar">
        
