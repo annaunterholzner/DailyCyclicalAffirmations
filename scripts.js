@@ -1,3 +1,4 @@
+// Function to show the desired section and hide the others
 function showSection(sectionId) {
   // Hide all sections
   const sections = document.querySelectorAll(".section");
@@ -5,21 +6,21 @@ function showSection(sectionId) {
     section.style.display = "none";
   });
 
-  // Hide all menu items' active state
+  // Remove active class from all menu items
   const menuItems = document.querySelectorAll(".menu-bar h1");
   menuItems.forEach((item) => {
     item.classList.remove("active");
   });
 
-  // Show the selected section and set the active menu item
+  // Show the selected section and set active menu item
   document.getElementById(sectionId).style.display = "block";
   document.querySelector(`.menu-bar h1[data-section="${sectionId}"]`).classList.add("active");
 }
 
 // Ensure the "home" section is shown when the page loads
-window.onload = function () {
+window.addEventListener("DOMContentLoaded", function () {
   showSection("home");
-};
+});
 
 const cardContainer = document.getElementById("card-container");
 const numCards = 33; // Total number of cards (front1.png to front33.png)
