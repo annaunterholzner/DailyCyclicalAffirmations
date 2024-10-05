@@ -126,7 +126,6 @@ img {
   display: none;
 }
 /* Style for the button */
-/* Style for the button */
 .pick-card-button {
   display: inline-block;
   background-color: red;
@@ -151,7 +150,12 @@ img {
 
 .pick-card-button:hover {
   background-color: darkred;
-  font-style: italic; /* Example of changing the font style on hover */
+  /*font-style: italic; /* Example of changing the font style on hover */
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
 }
 
 /* Normal link color */
@@ -185,6 +189,12 @@ a:active {
 
 /* Home section container */
 #home {
+  text-align: center;
+}
+
+/* The "Pick a Card" section */
+#pick-a-card {
+  padding: 40px 20px;
   text-align: center;
 }
 
