@@ -160,7 +160,6 @@ a:visited {
 /* Hover link color */
 a:hover {
   color: red;
-  text-decoration: underline;
 }
 
 /* Active link color */
