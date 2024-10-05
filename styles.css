@@ -126,6 +126,7 @@ img {
   display: none;
 }
 /* Style for the button */
+/* Style for the button */
 .pick-card-button {
   display: inline-block;
   background-color: red;
@@ -140,10 +141,17 @@ img {
   position: relative;
   top: 20px; /* Adds space between the image and the button */
   margin-bottom: 40px; /* Space below the button */
+
+  /* Font customization */
+  font-family: "The Hungry", sans-serif; /* Change to your desired font family */
+  font-style: normal; /* Options: normal, italic, oblique */
+ /* font-weight: bold; /* Options: normal, bold, 100-900 */
+ /* font-size: 2em; /* Change size of the font */
 }
 
 .pick-card-button:hover {
   background-color: darkred;
+  font-style: italic; /* Example of changing the font style on hover */
 }
 
 /* Normal link color */
@@ -179,3 +187,4 @@ a:active {
 #home {
   text-align: center;
 }
+
