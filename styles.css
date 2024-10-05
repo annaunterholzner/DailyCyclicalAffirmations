@@ -131,9 +131,9 @@ img {
   background-color: red;
   color: white;
   font-size: 2em;
-  padding: 20px 40px;
+  padding: 20px 30px;
   text-align: center;
-  border-radius: 25px;
+  border-radius: 20px;
   border: none;
   cursor: pointer;
   text-decoration: none;
@@ -162,11 +162,6 @@ html {
 a {
   color: rgb(243, 86, 29);
   text-decoration: none;
-}
-
-/* Visited link color */
-a:visited {
-  color: rgb(165, 90, 9);
 }
 
 /* Hover link color */
