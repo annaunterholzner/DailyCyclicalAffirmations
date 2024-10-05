@@ -125,3 +125,58 @@ img {
 .hidden {
   display: none;
 }
+/* Style for the button */
+.pick-card-button {
+  display: inline-block;
+  background-color: red;
+  color: white;
+  font-size: 2em;
+  padding: 20px 40px;
+  text-align: center;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  top: 20px; /* Adds space between the image and the button */
+  margin-bottom: 40px; /* Space below the button */
+}
+
+.pick-card-button:hover {
+  background-color: darkred;
+}
+
+/* Normal link color */
+a {
+  color: rgb(243, 86, 29);
+  text-decoration: none;
+}
+
+/* Visited link color */
+a:visited {
+  color: rgb(165, 90, 9);
+}
+
+/* Hover link color */
+a:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+/* Active link color */
+a:active {
+  color: rgb(79, 21, 7);
+}
+
+/* Image container styles */
+#home img {
+  width: 40%;
+  height: 40%;
+  display: block;
+  margin: 0 auto; /* Centers the image */
+}
+
+/* Home section container */
+#home {
+  text-align: center;
+}
