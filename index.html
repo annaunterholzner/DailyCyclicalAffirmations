@@ -11,10 +11,10 @@
     <div class="menu-bar">
        
       <h1 onclick="showSection('home')">Home</h1>
-      <h1 onclick="showSection('about')">About</h1>
-      <h1 onclick="showSection('how-to')">How to</h1>
       <h1 onclick="showSection('pick-a-card')">Pick a Card</h1>
       <h1 onclick="showSection('get-your-own')">Get Your Own</h1>
+      <h1 onclick="showSection('how-to')">How to</h1>
+      <h1 onclick="showSection('about')">About</h1>
       <h1 onclick="showSection('team')">Team</h1>
       <h1 onclick="showSection('contact')">Contact</h1>
     </div>
@@ -50,7 +50,13 @@
       <br /><br />
       <img src="homeimagee.png" alt="homeimagee" style="width: 40%; height: 40%;" />
       <br /><br />
-       <a href="#pick-a-card" class="pick-card-button">Pick Your Daily Card</a>
+     <a href="javascript:void(0)" class="pick-card-button" onclick="showSection('pick-a-card')">Pick Your Daily Card</a>
+
+<section id="pick-a-card" style="display:none;">
+    <!-- Content for the pick-a-card section goes here -->
+    <h1>Card Selection Section</h1>
+</section>
+
       <h2>
         The affirmations were carefully co-created to serve as your daily dose
         of connection
