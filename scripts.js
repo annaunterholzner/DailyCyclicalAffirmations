@@ -97,5 +97,12 @@ document.querySelector(".menu-bar").addEventListener("click", function (event) {
   }
 });
 
+// Function to show the card game section
+function showCardGame() {
+    const cardGameSection = document.getElementById('pick-a-card-section');
+    cardGameSection.style.display = 'block';
+}
+
+
 
 
