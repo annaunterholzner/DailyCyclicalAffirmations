@@ -170,7 +170,7 @@ a:hover {
 }
 
 /* Active link color */
-a:active {
+/*a:active {
   color: rgb(79, 21, 7);
 }
 
